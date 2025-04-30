@@ -25,6 +25,11 @@ body {
   padding: 0;
   margin: 0;
 }
+@media screen and (max-width:700px) {
+  .title{
+    font-size: 6rem;
+  }
+}
 
 .layout {
   display: flex;
@@ -185,8 +190,12 @@ a {
   display: none;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 40px;
+  padding: 10px 40px;
   background-color: var(--primary-color);
+}
+.mble-brand{
+  font-family: "Comfortaa", sans-serif;
+  color: #fff;
 }
 
 #menu-btn {
@@ -203,6 +212,9 @@ a {
   cursor: pointer;
   transition: 0.3s;
   z-index: 1000;
+  position: fixed;
+  top: 10px;
+  right: 20px;
 }
 
 .bar {
@@ -224,20 +236,20 @@ a {
 }
 
 /*  Responsive Navbar */
-@media screen and (max-width: 756px) {
+@media screen and (max-width: 700px) {
   .mble-nav {
     display: flex;
   }
   .navbar {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     position: fixed;
     right: 0;
     top: 0;
     height: 100vh;
-    width: 40vw;
+    width: 80vw;
     padding: 0;
     z-index: 999;
     background-color: #fff;
@@ -256,6 +268,8 @@ a {
   }
   .nav-links {
     margin: 30px;
+    border-radius: none;
+    box-shadow: none;
   }
   .nav-links ul {
     display: flex;
@@ -271,10 +285,14 @@ a {
   }
   .nav-socials ul {
     display: flex;
-    margin: 20px 0;
+    margin:  0;
   }
   .nav-socials li {
     padding-right: 8px;
+    
+  }
+  .nav-socials a{
+    color: #000;
   }
 
   .nav-info {
@@ -412,9 +430,11 @@ move the flex to 50% which one text is out of screen and the Duplicate is ready 
   }
 }
 
-svg {
+.arrow-svg {
   position: absolute;
   right: 25%;
+  width: 300px;
+  height: 300px;
   transform: rotate(180deg);
   animation: rotate 1s ease forwards;
   transform-origin: center;
@@ -448,21 +468,37 @@ svg {
   line-height: 25px;
 }
 
-@media screen and (max-width: 756px) {
+@media screen and (max-width: 700px) {
   .hero-intro-title h1 {
-    font-size: 4rem;
+    font-size: 2rem;
   }
   .hero-intro-title h6 {
-    font-size: 0.8rem;
+    font-size: 0.4rem;
   }
   .hero-intro-img img {
-    height: 40vh;
+    height: 50vh;
+    width: 100vw;
+  }
+  .hero-intro-text{
+    width: 20vw;
+  }
+  .hero-intro-text p {
+    font-size: 0.6rem;
+    line-height: 12px;
   }
 
-  .hero-intro-text p {
-    font-size: 0.8rem;
-    line-height: 20px;
+  .arrow-svg{
+    width: 200px;
+    height: 200px;
+    bottom:45%;
+    right: 15%;
   }
+  @keyframes rotate {
+    to{
+      transform: rotate(-25deg);
+    }
+  }
+
 }
 
 /* ABOUT SECTION */
@@ -478,18 +514,18 @@ svg {
   right: 30%;
 }
 
-.about-heading p {
-  font-size: 10rem;
+.about-heading {
+  font-size: 8rem;
   font-family: "Dancing script", cursive;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 .about-main {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 40px;
-  width: 800px;
+  margin: 0 250px;
 }
 .about-img img {
   width: 300px;
@@ -509,6 +545,18 @@ svg {
   padding: 0;
   letter-spacing: 1%;
   line-height: 24px;
+}
+
+@media screen and (max-width:700px) {
+  .about-main{
+    margin: 0 20px;
+  }
+  .about-img img{
+    width: 150px;
+  }
+  .about-heading{
+    font-size: 5rem;
+  }
 }
 
 .animate-element {
@@ -531,7 +579,12 @@ svg {
   grid-template-columns: 1fr 1fr; /* 2 columns, each takes 1 fraction */
   gap: 30px 30px; /* first row gap, 2nd column gap */
   margin: 20px;
-  
+
+}
+@media screen and (max-width:700px) {
+  .skill-grid{
+    grid-template-columns: 1fr;
+  }
 }
 .item {
   padding: 20px;
@@ -588,6 +641,10 @@ svg {
   visibility: visible;
   opacity: 1;
 }
+.item-logo:active .tooltip{
+  visibility: visible;
+  opacity: 1;
+}
 
 .item-span{
   padding: 6px;
@@ -604,16 +661,14 @@ svg {
   align-items: center;
   flex-direction: column;
   padding: 60px;
-
+  background-color: var(--primary-color);
+  border-top: 2px solid #000;
 }
 .projects-grid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   margin: 20px 0;
 }
-
-
-
 
 .card {
   width: 320px;
@@ -629,6 +684,11 @@ svg {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5) ;
 }
 
+@media screen and (max-width:700px) {
+  .projects-grid{
+    grid-template-columns: 1fr;
+  }
+}
 .card img {
   width: 100%;
   height: auto;
